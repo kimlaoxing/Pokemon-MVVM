@@ -7,20 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73C654DD0EC0CA0EFB94B773 /* Pods_Pokemon_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC787AAA4695DF8A0DB77B4 /* Pods_Pokemon_MVVM.framework */; };
+		EAD0878B2987A7D600BB5245 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878A2987A7D600BB5245 /* Components.framework */; };
+		EAD0878C2987A7D600BB5245 /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878A2987A7D600BB5245 /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAD0878F2987A7D900BB5245 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878E2987A7D900BB5245 /* Home.framework */; };
+		EAD087902987A7D900BB5245 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878E2987A7D900BB5245 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAD087922987A7E100BB5245 /* Router.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; };
+		EAD087932987A7E100BB5245 /* Router.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAE14FCF2987A46200DF279A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FCE2987A46200DF279A /* AppDelegate.swift */; };
 		EAE14FD12987A46200DF279A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD02987A46200DF279A /* SceneDelegate.swift */; };
 		EAE14FD32987A46200DF279A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD22987A46200DF279A /* ViewController.swift */; };
-		EAE14FD62987A46200DF279A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE14FD42987A46200DF279A /* Main.storyboard */; };
 		EAE14FD82987A46400DF279A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE14FD72987A46400DF279A /* Assets.xcassets */; };
 		EAE14FDB2987A46400DF279A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE14FD92987A46400DF279A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EAD0878D2987A7D600BB5245 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAD0878C2987A7D600BB5245 /* Components.framework in Embed Frameworks */,
+				EAD087932987A7E100BB5245 /* Router.framework in Embed Frameworks */,
+				EAD087902987A7D900BB5245 /* Home.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2CC787AAA4695DF8A0DB77B4 /* Pods_Pokemon_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokemon_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A65C284597EB229797D92DAE /* Pods-Pokemon-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemon-MVVM.release.xcconfig"; path = "Target Support Files/Pods-Pokemon-MVVM/Pods-Pokemon-MVVM.release.xcconfig"; sourceTree = "<group>"; };
+		E41B6C5D30BA38EB9C17FA74 /* Pods-Pokemon-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemon-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Pokemon-MVVM/Pods-Pokemon-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		EAD0878A2987A7D600BB5245 /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD0878E2987A7D900BB5245 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD087912987A7E100BB5245 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE14FCB2987A46200DF279A /* Pokemon-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE14FCE2987A46200DF279A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE14FD02987A46200DF279A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EAE14FD22987A46200DF279A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EAE14FD52987A46200DF279A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE14FD72987A46400DF279A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE14FDA2987A46400DF279A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE14FDC2987A46400DF279A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +58,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD0878B2987A7D600BB5245 /* Components.framework in Frameworks */,
+				EAD087922987A7E100BB5245 /* Router.framework in Frameworks */,
+				73C654DD0EC0CA0EFB94B773 /* Pods_Pokemon_MVVM.framework in Frameworks */,
+				EAD0878F2987A7D900BB5245 /* Home.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16097A2BFBAD32844EBE4CDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E41B6C5D30BA38EB9C17FA74 /* Pods-Pokemon-MVVM.debug.xcconfig */,
+				A65C284597EB229797D92DAE /* Pods-Pokemon-MVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		556C6B12DEFAE5563C0D23D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087912987A7E100BB5245 /* Router.framework */,
+				EAD0878E2987A7D900BB5245 /* Home.framework */,
+				EAD0878A2987A7D600BB5245 /* Components.framework */,
+				2CC787AAA4695DF8A0DB77B4 /* Pods_Pokemon_MVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EAE14FC22987A46200DF279A = {
 			isa = PBXGroup;
 			children = (
 				EAE14FCD2987A46200DF279A /* Pokemon-MVVM */,
 				EAE14FCC2987A46200DF279A /* Products */,
+				16097A2BFBAD32844EBE4CDA /* Pods */,
+				556C6B12DEFAE5563C0D23D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +109,22 @@
 		EAE14FCD2987A46200DF279A /* Pokemon-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				EAE14FCE2987A46200DF279A /* AppDelegate.swift */,
-				EAE14FD02987A46200DF279A /* SceneDelegate.swift */,
+				EAE14FE22987A66600DF279A /* Delegate */,
 				EAE14FD22987A46200DF279A /* ViewController.swift */,
-				EAE14FD42987A46200DF279A /* Main.storyboard */,
 				EAE14FD72987A46400DF279A /* Assets.xcassets */,
 				EAE14FD92987A46400DF279A /* LaunchScreen.storyboard */,
 				EAE14FDC2987A46400DF279A /* Info.plist */,
 			);
 			path = "Pokemon-MVVM";
+			sourceTree = "<group>";
+		};
+		EAE14FE22987A66600DF279A /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EAE14FCE2987A46200DF279A /* AppDelegate.swift */,
+				EAE14FD02987A46200DF279A /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAE14FDF2987A46400DF279A /* Build configuration list for PBXNativeTarget "Pokemon-MVVM" */;
 			buildPhases = (
+				F5E54704125A76A4B5F44160 /* [CP] Check Pods Manifest.lock */,
 				EAE14FC72987A46200DF279A /* Sources */,
 				EAE14FC82987A46200DF279A /* Frameworks */,
 				EAE14FC92987A46200DF279A /* Resources */,
+				55B2378C58FE20D7E7953EC3 /* [CP] Embed Pods Frameworks */,
+				EAD0878D2987A7D600BB5245 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +190,52 @@
 			files = (
 				EAE14FDB2987A46400DF279A /* LaunchScreen.storyboard in Resources */,
 				EAE14FD82987A46400DF279A /* Assets.xcassets in Resources */,
-				EAE14FD62987A46200DF279A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55B2378C58FE20D7E7953EC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pokemon-MVVM/Pods-Pokemon-MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pokemon-MVVM/Pods-Pokemon-MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pokemon-MVVM/Pods-Pokemon-MVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E54704125A76A4B5F44160 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pokemon-MVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAE14FC72987A46200DF279A /* Sources */ = {
@@ -147,14 +251,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EAE14FD42987A46200DF279A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAE14FD52987A46200DF279A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EAE14FD92987A46400DF279A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +380,7 @@
 		};
 		EAE14FE02987A46400DF279A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E41B6C5D30BA38EB9C17FA74 /* Pods-Pokemon-MVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,7 +391,6 @@
 				INFOPLIST_FILE = "Pokemon-MVVM/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -313,6 +409,7 @@
 		};
 		EAE14FE12987A46400DF279A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A65C284597EB229797D92DAE /* Pods-Pokemon-MVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,7 +420,6 @@
 				INFOPLIST_FILE = "Pokemon-MVVM/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
