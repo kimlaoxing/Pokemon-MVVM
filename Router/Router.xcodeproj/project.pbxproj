@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		D2A9D9D4ADF3C0083008DD22 /* Pods_Router.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5522D474B10D4086AC92FF /* Pods_Router.framework */; };
 		EAD087702987A78E00BB5245 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD0876F2987A78E00BB5245 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD0879A2987A93400BB5245 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087992987A93400BB5245 /* DefaultRouter.swift */; };
+		EAD0879C2987A93C00BB5245 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0879B2987A93C00BB5245 /* Router.swift */; };
+		EAD0879E2987A94A00BB5245 /* AnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0879D2987A94A00BB5245 /* AnimatedTransition.swift */; };
+		EAD087A02987A95600BB5245 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0879F2987A95600BB5245 /* EmptyTransition.swift */; };
+		EAD087A22987A96800BB5245 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A12987A96800BB5245 /* ModalTransition.swift */; };
+		EAD087A42987A97000BB5245 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A32987A97000BB5245 /* PushTransition.swift */; };
+		EAD087A62987A97A00BB5245 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A52987A97A00BB5245 /* Transition.swift */; };
+		EAD087A82987A98400BB5245 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A72987A98400BB5245 /* AnimatedTransitioning.swift */; };
+		EAD087AA2987A98C00BB5245 /* FadeAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +26,15 @@
 		E37D834F8D878EDB890185A8 /* Pods-Router.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router.debug.xcconfig"; path = "Target Support Files/Pods-Router/Pods-Router.debug.xcconfig"; sourceTree = "<group>"; };
 		EAD0876C2987A78E00BB5245 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD0876F2987A78E00BB5245 /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		EAD087992987A93400BB5245 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		EAD0879B2987A93C00BB5245 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		EAD0879D2987A94A00BB5245 /* AnimatedTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransition.swift; sourceTree = "<group>"; };
+		EAD0879F2987A95600BB5245 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		EAD087A12987A96800BB5245 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		EAD087A32987A97000BB5245 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		EAD087A52987A97A00BB5245 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		EAD087A72987A98400BB5245 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimatedTransitioning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +78,34 @@
 		EAD0876E2987A78E00BB5245 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				EAD087982987A92800BB5245 /* Animator */,
+				EAD087972987A92300BB5245 /* Transition */,
 				EAD0876F2987A78E00BB5245 /* Router.h */,
+				EAD087992987A93400BB5245 /* DefaultRouter.swift */,
+				EAD0879B2987A93C00BB5245 /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		EAD087972987A92300BB5245 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				EAD0879D2987A94A00BB5245 /* AnimatedTransition.swift */,
+				EAD0879F2987A95600BB5245 /* EmptyTransition.swift */,
+				EAD087A12987A96800BB5245 /* ModalTransition.swift */,
+				EAD087A32987A97000BB5245 /* PushTransition.swift */,
+				EAD087A52987A97A00BB5245 /* Transition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		EAD087982987A92800BB5245 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087A72987A98400BB5245 /* AnimatedTransitioning.swift */,
+				EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		F095F3D843329C8CB80AAABE /* Pods */ = {
@@ -119,6 +162,7 @@
 				TargetAttributes = {
 					EAD0876B2987A78E00BB5245 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -180,6 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD087A62987A97A00BB5245 /* Transition.swift in Sources */,
+				EAD087AA2987A98C00BB5245 /* FadeAnimatedTransitioning.swift in Sources */,
+				EAD0879E2987A94A00BB5245 /* AnimatedTransition.swift in Sources */,
+				EAD087A82987A98400BB5245 /* AnimatedTransitioning.swift in Sources */,
+				EAD0879C2987A93C00BB5245 /* Router.swift in Sources */,
+				EAD087A02987A95600BB5245 /* EmptyTransition.swift in Sources */,
+				EAD087A22987A96800BB5245 /* ModalTransition.swift in Sources */,
+				EAD087A42987A97000BB5245 /* PushTransition.swift in Sources */,
+				EAD0879A2987A93400BB5245 /* DefaultRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E37D834F8D878EDB890185A8 /* Pods-Router.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -333,6 +387,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91587639661624CFB1D83AAA /* Pods-Router.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

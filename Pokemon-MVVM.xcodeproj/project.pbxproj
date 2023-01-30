@@ -14,6 +14,7 @@
 		EAD087902987A7D900BB5245 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878E2987A7D900BB5245 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAD087922987A7E100BB5245 /* Router.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; };
 		EAD087932987A7E100BB5245 /* Router.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAD087962987A8BA00BB5245 /* SceneDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */; };
 		EAE14FCF2987A46200DF279A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FCE2987A46200DF279A /* AppDelegate.swift */; };
 		EAE14FD12987A46200DF279A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD02987A46200DF279A /* SceneDelegate.swift */; };
 		EAE14FD32987A46200DF279A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD22987A46200DF279A /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		EAD0878A2987A7D600BB5245 /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD0878E2987A7D900BB5245 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD087912987A7E100BB5245 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateExtension.swift; sourceTree = "<group>"; };
 		EAE14FCB2987A46200DF279A /* Pokemon-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE14FCE2987A46200DF279A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE14FD02987A46200DF279A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EAD087942987A8AA00BB5245 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		EAE14FC22987A46200DF279A = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		EAE14FCD2987A46200DF279A /* Pokemon-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EAD087942987A8AA00BB5245 /* Extension */,
 				EAE14FE22987A66600DF279A /* Delegate */,
 				EAE14FD22987A46200DF279A /* ViewController.swift */,
 				EAE14FD72987A46400DF279A /* Assets.xcassets */,
@@ -243,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE14FD32987A46200DF279A /* ViewController.swift in Sources */,
+				EAD087962987A8BA00BB5245 /* SceneDelegateExtension.swift in Sources */,
 				EAE14FCF2987A46200DF279A /* AppDelegate.swift in Sources */,
 				EAE14FD12987A46200DF279A /* SceneDelegate.swift in Sources */,
 			);
