@@ -4,7 +4,7 @@ import UIKit
 public class RoundedButton: UIView {
     
     private lazy var container = UIView.make {
-        $0.dimension(Padding.NORMAL_CONTENT_INSET)
+        $0.height(Padding.NORMAL_CONTENT_INSET * 0.7)
         $0.layer.cornerRadius = 15
         $0.edges(to: self)
     }

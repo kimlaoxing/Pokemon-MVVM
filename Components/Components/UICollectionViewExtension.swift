@@ -22,3 +22,4 @@ extension UICollectionView {
         return height != 0 ? height : defaultCollectionViewHeight
     }
 }
+

@@ -5,10 +5,12 @@ import Components
 
 protocol DetailPokemonViewModelInput {
     func getDetail(with url: String)
+    func getListAbility(with url: String)
 }
 
 protocol DetailPokemonViewModelOutput {
     var detailPokemon: BehaviorRelay<DetailPokemonResponse?> { get }
+    var listAbility: BehaviorRelay<AbilityResponse?> { get }
     var state: BehaviorRelay<BaseViewState?> { get }
     var error: BehaviorRelay<String> { get }
 }
@@ -18,6 +20,7 @@ protocol DetailPokemonViewModel: DetailPokemonViewModelInput, DetailPokemonViewM
 final class DefaultDetailPokemonViewModel: DetailPokemonViewModel {
    
     let detailPokemon: BehaviorRelay<DetailPokemonResponse?> = BehaviorRelay.init(value: nil)
+    let listAbility: BehaviorRelay<AbilityResponse?> = BehaviorRelay.init(value: nil)
     let state: BehaviorRelay<BaseViewState?> = BehaviorRelay.init(value: .loading)
     let error: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     private let useCase: DetailPokemonUseCaseProtocol
@@ -44,7 +47,26 @@ extension DefaultDetailPokemonViewModel {
             case .failure(let error):
                 self.error.accept("\(error)")
             case .success(let data):
+                self.state.accept(.normal)
                 self.detailPokemon.accept(data)
+                if let abilities = data.abilities {
+                    for url in abilities {
+                        self.getListAbility(with: url.ability?.url ?? "")
+                    }
+                }
+            }
+        }
+    }
+    
+    func getListAbility(with url: String) {
+        self.state.accept(.loading)
+        self.useCase.getListAbility(with: url) { data in
+            switch data {
+            case .failure(let error):
+                self.error.accept("\(error)")
+            case .success(let data):
+                self.state.accept(.normal)
+                self.listAbility.accept(data)
             }
         }
     }

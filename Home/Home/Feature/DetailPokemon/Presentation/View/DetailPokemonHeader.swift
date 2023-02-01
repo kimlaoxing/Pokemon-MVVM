@@ -34,7 +34,7 @@ final class DetailPokemonHeader: UIView {
     }
     
     private lazy var elementLabel = RoundedButton.make {
-        $0.horizontalPadding(to: roundedStack, Padding.double * 4)
+        $0.horizontalPadding(to: roundedStack, Padding.double * 6)
     }
     
     override init(frame: CGRect) {

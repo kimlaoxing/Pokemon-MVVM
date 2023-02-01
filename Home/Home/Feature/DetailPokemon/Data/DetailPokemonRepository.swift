@@ -2,6 +2,7 @@ import Foundation
 
 protocol DetailPokemonRepositoryProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void)
+    func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void)
 }
 
 final class DetailPokemonRepository: NSObject {
@@ -21,6 +22,17 @@ final class DetailPokemonRepository: NSObject {
 extension DetailPokemonRepository: DetailPokemonRepositoryProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
         self.remote.getDetailPokemon(with: url) { data in
+            switch data {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                completion(.success(data))
+            }
+        }
+    }
+    
+    func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void) {
+        self.remote.getListAbility(with: url) { data in
             switch data {
             case .failure(let error):
                 completion(.failure(error))
