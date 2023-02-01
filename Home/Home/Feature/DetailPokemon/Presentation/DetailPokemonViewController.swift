@@ -69,7 +69,25 @@ final class DetailPokemonViewController: UIViewController {
             guard let self = self, let data = data else { return }
             self.abilityTableView.reloadData()
         }).disposed(by: bag)
+        
+        self.viewModel?.state.subscribe(onNext: { [weak self] state in
+            guard let self = self, let state = state else  { return }
+            self.handleState(with: state)
+        })
        
+    }
+    
+    private func handleState(with state: BaseViewState) {
+        switch state {
+        case .loading:
+            self.manageLoadingActivity(isLoading: true)
+            self.scrollView.isHidden = true
+        case .normal:
+            self.manageLoadingActivity(isLoading: false)
+            self.scrollView.isHidden = false
+        case .empty:
+            self.scrollView.isHidden = true
+        }
     }
     
     private func subViews() {

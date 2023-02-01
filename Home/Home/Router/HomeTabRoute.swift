@@ -37,55 +37,7 @@ extension HomeTabRoute where Self: Router {
         router.root = vc
         route(to: vc, as: transition)
     }
-//
-//    func toNowPlayingSection(with transition: Transition) {
-//        let router = DefaultRouter(rootTransition: transition)
-//        let vc = ListSectionViewController()
-//        let useCase = BaseInjection.init().provideBase()
-//        let vm = DefaultBaseViewModel(router: router, useCase: useCase)
-//        vc.viewModel = vm
-//        vc.category = .nowPlaying
-//        vc.hidesBottomBarWhenPushed = true
-//        router.root = vc
-//        route(to: vc, as: transition)
-//    }
-//
-//    func toPopularMovieSection(with transition: Transition) {
-//        let router = DefaultRouter(rootTransition: transition)
-//        let vc = ListSectionViewController()
-//        let useCase = BaseInjection.init().provideBase()
-//        let vm = DefaultBaseViewModel(router: router, useCase: useCase)
-//        vc.viewModel = vm
-//        vc.category = .popular
-//        vc.hidesBottomBarWhenPushed = true
-//        router.root = vc
-//        route(to: vc, as: transition)
-//    }
-//
-//    func toTopRatedSection(with transition: Transition) {
-//        let router = DefaultRouter(rootTransition: transition)
-//        let vc = ListSectionViewController()
-//        let useCase = BaseInjection.init().provideBase()
-//        let vm = DefaultBaseViewModel(router: router, useCase: useCase)
-//        vc.viewModel = vm
-//        vc.category = .topRated
-//        vc.hidesBottomBarWhenPushed = true
-//        router.root = vc
-//        route(to: vc, as: transition)
-//    }
-//
-//    func toPageUpComingSection(with transition: Transition) {
-//        let router = DefaultRouter(rootTransition: transition)
-//        let vc = ListSectionViewController()
-//        let useCase = BaseInjection.init().provideBase()
-//        let vm = DefaultBaseViewModel(router: router, useCase: useCase)
-//        vc.viewModel = vm
-//        vc.category = .upComing
-//        vc.hidesBottomBarWhenPushed = true
-//        router.root = vc
-//        route(to: vc, as: transition)
-//    }
-//
+    
     func toPopUpError(with transisiton: Transition, errorMessage: String) {
         let router = DefaultRouter(rootTransition: transisiton)
         let vc = ErrorViewController()
@@ -99,23 +51,7 @@ extension DefaultRouter: HomeTabRoute {
     public func toDetail(with url: String) {
         toDetailPokemon(with: PushTransition(), url: url)
     }
-//
-//    public func toNowPlayingSection() {
-//        toNowPlayingSection(with: PushTransition())
-//    }
-//
-//    public func toPopularMovieSection() {
-//        toPopularMovieSection(with: PushTransition())
-//    }
-//
-//    public func toTopRatedSection() {
-//        toTopRatedSection(with: PushTransition())
-//    }
-//
-//    public func toPageUpComingSection() {
-//        toPageUpComingSection(with: PushTransition())
-//    }
-//
+    
     public func popUpError(with errorMessage: String) {
         toPopUpError(with: ModalTransition(), errorMessage: errorMessage)
     }

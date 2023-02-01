@@ -7,8 +7,7 @@ final class DetailPokemonSpiritesView: UIView {
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
         $0.edges(to: self, Padding.reguler)
-        $0.spacing = Padding.reguler
-        
+        $0.spacing = Padding.reguler   
     }
     
     private lazy var title = UILabel.make {

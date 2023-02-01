@@ -58,7 +58,7 @@ final class ListPokemonViewController: UIViewController {
             guard let self = self else { return }
             self.tableView.reloadData()
         }).disposed(by: bag)
-
+        
         viewModel?.state.subscribe(onNext: { [weak self] state in
             guard let self = self else { return }
             self.handleState(with: state)
@@ -68,9 +68,11 @@ final class ListPokemonViewController: UIViewController {
     private func handleState(with state: BaseViewState) {
         switch state {
         case .loading:
+            self.manageLoadingActivity(isLoading: true)
             self.tableView.isHidden = true
             self.emptyView.isHidden = true
         case .normal:
+            self.manageLoadingActivity(isLoading: false)
             self.tableView.isHidden = false
             self.emptyView.isHidden = true
         case .empty:
@@ -92,8 +94,6 @@ extension ListPokemonViewController: UITableViewDelegate, UITableViewDataSource 
         if let data = viewModel?.detailPokemon.value[indexPath.row] {
             cell.setContent(with: data)
         }
-        
-//        viewModel?.loadNextPage(index: indexPath.row)
         return cell
     }
     
