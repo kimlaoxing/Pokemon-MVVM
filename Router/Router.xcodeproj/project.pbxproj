@@ -18,6 +18,7 @@
 		EAD087A62987A97A00BB5245 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A52987A97A00BB5245 /* Transition.swift */; };
 		EAD087A82987A98400BB5245 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A72987A98400BB5245 /* AnimatedTransitioning.swift */; };
 		EAD087AA2987A98C00BB5245 /* FadeAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */; };
+		EAD087DD2987AD2A00BB5245 /* TabBarRouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087DC2987AD2A00BB5245 /* TabBarRouterProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EAD087A52987A97A00BB5245 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		EAD087A72987A98400BB5245 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		EAD087DC2987AD2A00BB5245 /* TabBarRouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouterProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		EAD087622987A78E00BB5245 = {
 			isa = PBXGroup;
 			children = (
+				EAD087DB2987AD1A00BB5245 /* TabBar */,
 				EAD0876E2987A78E00BB5245 /* Router */,
 				EAD0876D2987A78E00BB5245 /* Products */,
 				F095F3D843329C8CB80AAABE /* Pods */,
@@ -106,6 +109,14 @@
 				EAD087A92987A98C00BB5245 /* FadeAnimatedTransitioning.swift */,
 			);
 			path = Animator;
+			sourceTree = "<group>";
+		};
+		EAD087DB2987AD1A00BB5245 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087DC2987AD2A00BB5245 /* TabBarRouterProtocols.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		F095F3D843329C8CB80AAABE /* Pods */ = {
@@ -228,6 +239,7 @@
 				EAD087AA2987A98C00BB5245 /* FadeAnimatedTransitioning.swift in Sources */,
 				EAD0879E2987A94A00BB5245 /* AnimatedTransition.swift in Sources */,
 				EAD087A82987A98400BB5245 /* AnimatedTransitioning.swift in Sources */,
+				EAD087DD2987AD2A00BB5245 /* TabBarRouterProtocols.swift in Sources */,
 				EAD0879C2987A93C00BB5245 /* Router.swift in Sources */,
 				EAD087A02987A95600BB5245 /* EmptyTransition.swift in Sources */,
 				EAD087A22987A96800BB5245 /* ModalTransition.swift in Sources */,

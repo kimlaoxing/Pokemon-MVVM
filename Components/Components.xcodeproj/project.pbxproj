@@ -8,14 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		114047BFD2F0731108D8782D /* Pods_Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51523DC76401DC5B619042BE /* Pods_Components.framework */; };
+		EAB0792929895C6400EEF27F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0792829895C6400EEF27F /* RoundedButton.swift */; };
 		EAD087842987A79F00BB5245 /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD087832987A79F00BB5245 /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD087AC2987AA4300BB5245 /* BaseViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087AB2987AA4300BB5245 /* BaseViewState.swift */; };
+		EAD087AE2987AA4B00BB5245 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087AD2987AA4B00BB5245 /* APIService.swift */; };
+		EAD087B02987AA5200BB5245 /* DecodeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087AF2987AA5200BB5245 /* DecodeWrapper.swift */; };
+		EAD087B22987AA5A00BB5245 /* DefaultCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087B12987AA5A00BB5245 /* DefaultCollectionView.swift */; };
+		EAD087B42987AA6100BB5245 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087B32987AA6100BB5245 /* EmptyView.swift */; };
+		EAD087B62987AA6800BB5245 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087B52987AA6800BB5245 /* Observable.swift */; };
+		EAD087B82987AA6F00BB5245 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087B72987AA6F00BB5245 /* Padding.swift */; };
+		EAD087BA2987AA7800BB5245 /* SafeAreaInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087B92987AA7800BB5245 /* SafeAreaInsert.swift */; };
+		EAD087BC2987AA7F00BB5245 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087BB2987AA7F00BB5245 /* ScreenSize.swift */; };
+		EAD087BE2987AA8500BB5245 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087BD2987AA8500BB5245 /* ScrollViewContainer.swift */; };
+		EAD087C02987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087BF2987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift */; };
+		EAD087C22987AA9700BB5245 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087C12987AA9700BB5245 /* UICollectionViewExtension.swift */; };
+		EAD087C42987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087C32987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift */; };
+		EAD087C62987AAB100BB5245 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087C52987AAB100BB5245 /* UIImageView.swift */; };
+		EAD087C82987AAB800BB5245 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087C72987AAB800BB5245 /* UIView.swift */; };
+		EAD087CA2987AABF00BB5245 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087C92987AABF00BB5245 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		51523DC76401DC5B619042BE /* Pods_Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74FB30B7C90B570DE597984 /* Pods-Components.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Components.release.xcconfig"; path = "Target Support Files/Pods-Components/Pods-Components.release.xcconfig"; sourceTree = "<group>"; };
+		EAB0792829895C6400EEF27F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EAD087802987A79F00BB5245 /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD087832987A79F00BB5245 /* Components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
+		EAD087AB2987AA4300BB5245 /* BaseViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewState.swift; sourceTree = "<group>"; };
+		EAD087AD2987AA4B00BB5245 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EAD087AF2987AA5200BB5245 /* DecodeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeWrapper.swift; sourceTree = "<group>"; };
+		EAD087B12987AA5A00BB5245 /* DefaultCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionView.swift; sourceTree = "<group>"; };
+		EAD087B32987AA6100BB5245 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		EAD087B52987AA6800BB5245 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EAD087B72987AA6F00BB5245 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		EAD087B92987AA7800BB5245 /* SafeAreaInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaInsert.swift; sourceTree = "<group>"; };
+		EAD087BB2987AA7F00BB5245 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		EAD087BD2987AA8500BB5245 /* ScrollViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewContainer.swift; sourceTree = "<group>"; };
+		EAD087BF2987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelInHorizontalStack.swift; sourceTree = "<group>"; };
+		EAD087C12987AA9700BB5245 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		EAD087C32987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelegateFlowLayoutExtension.swift; sourceTree = "<group>"; };
+		EAD087C52987AAB100BB5245 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		EAD087C72987AAB800BB5245 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		EAD087C92987AABF00BB5245 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F6946A337705A8D8F8DC6F98 /* Pods-Components.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Components.debug.xcconfig"; path = "Target Support Files/Pods-Components/Pods-Components.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +105,23 @@
 			isa = PBXGroup;
 			children = (
 				EAD087832987A79F00BB5245 /* Components.h */,
+				EAD087AB2987AA4300BB5245 /* BaseViewState.swift */,
+				EAD087AD2987AA4B00BB5245 /* APIService.swift */,
+				EAD087AF2987AA5200BB5245 /* DecodeWrapper.swift */,
+				EAD087B12987AA5A00BB5245 /* DefaultCollectionView.swift */,
+				EAD087B32987AA6100BB5245 /* EmptyView.swift */,
+				EAD087B52987AA6800BB5245 /* Observable.swift */,
+				EAD087B72987AA6F00BB5245 /* Padding.swift */,
+				EAD087B92987AA7800BB5245 /* SafeAreaInsert.swift */,
+				EAD087BB2987AA7F00BB5245 /* ScreenSize.swift */,
+				EAD087BD2987AA8500BB5245 /* ScrollViewContainer.swift */,
+				EAD087BF2987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift */,
+				EAD087C12987AA9700BB5245 /* UICollectionViewExtension.swift */,
+				EAD087C32987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift */,
+				EAD087C52987AAB100BB5245 /* UIImageView.swift */,
+				EAD087C72987AAB800BB5245 /* UIView.swift */,
+				EAD087C92987AABF00BB5245 /* UIViewController.swift */,
+				EAB0792829895C6400EEF27F /* RoundedButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -119,6 +170,7 @@
 				TargetAttributes = {
 					EAD0877F2987A79F00BB5245 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -180,6 +232,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD087B02987AA5200BB5245 /* DecodeWrapper.swift in Sources */,
+				EAD087B42987AA6100BB5245 /* EmptyView.swift in Sources */,
+				EAD087C62987AAB100BB5245 /* UIImageView.swift in Sources */,
+				EAD087B82987AA6F00BB5245 /* Padding.swift in Sources */,
+				EAD087BE2987AA8500BB5245 /* ScrollViewContainer.swift in Sources */,
+				EAD087AE2987AA4B00BB5245 /* APIService.swift in Sources */,
+				EAD087BA2987AA7800BB5245 /* SafeAreaInsert.swift in Sources */,
+				EAD087C42987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift in Sources */,
+				EAD087C22987AA9700BB5245 /* UICollectionViewExtension.swift in Sources */,
+				EAD087B22987AA5A00BB5245 /* DefaultCollectionView.swift in Sources */,
+				EAD087C82987AAB800BB5245 /* UIView.swift in Sources */,
+				EAB0792929895C6400EEF27F /* RoundedButton.swift in Sources */,
+				EAD087BC2987AA7F00BB5245 /* ScreenSize.swift in Sources */,
+				EAD087B62987AA6800BB5245 /* Observable.swift in Sources */,
+				EAD087C02987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift in Sources */,
+				EAD087CA2987AABF00BB5245 /* UIViewController.swift in Sources */,
+				EAD087AC2987AA4300BB5245 /* BaseViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6946A337705A8D8F8DC6F98 /* Pods-Components.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -333,6 +403,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B74FB30B7C90B570DE597984 /* Pods-Components.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

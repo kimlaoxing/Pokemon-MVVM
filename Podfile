@@ -11,6 +11,7 @@ pod 'Declayout'
 pod 'Alamofire'
 pod 'RxSwift', '6.5.0'
 pod 'RxCocoa', '6.5.0'
+pod 'SDWebImage'
 end
 
 target 'Router' do
@@ -19,10 +20,12 @@ end
 
 target 'Home' do
 project 'Home/Home.project'
+core_pods
 end
 
 target 'Components' do
 project 'Components/Components.project'
+core_pods
 end
 
 target 'Pokemon-MVVM' do

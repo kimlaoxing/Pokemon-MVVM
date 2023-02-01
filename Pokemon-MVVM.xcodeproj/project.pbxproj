@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		73C654DD0EC0CA0EFB94B773 /* Pods_Pokemon_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC787AAA4695DF8A0DB77B4 /* Pods_Pokemon_MVVM.framework */; };
-		EAD0878B2987A7D600BB5245 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878A2987A7D600BB5245 /* Components.framework */; };
-		EAD0878C2987A7D600BB5245 /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878A2987A7D600BB5245 /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAD0878F2987A7D900BB5245 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878E2987A7D900BB5245 /* Home.framework */; };
 		EAD087902987A7D900BB5245 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0878E2987A7D900BB5245 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAD087922987A7E100BB5245 /* Router.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; };
 		EAD087932987A7E100BB5245 /* Router.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087912987A7E100BB5245 /* Router.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAD087962987A8BA00BB5245 /* SceneDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */; };
+		EAD087CE2987AC3700BB5245 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087CD2987AC3700BB5245 /* UITabBarController.swift */; };
+		EAD087FF2987CE3200BB5245 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087FE2987CE3200BB5245 /* Components.framework */; };
+		EAD088002987CE3200BB5245 /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD087FE2987CE3200BB5245 /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAE14FCF2987A46200DF279A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FCE2987A46200DF279A /* AppDelegate.swift */; };
 		EAE14FD12987A46200DF279A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD02987A46200DF279A /* SceneDelegate.swift */; };
-		EAE14FD32987A46200DF279A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE14FD22987A46200DF279A /* ViewController.swift */; };
 		EAE14FD82987A46400DF279A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE14FD72987A46400DF279A /* Assets.xcassets */; };
 		EAE14FDB2987A46400DF279A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE14FD92987A46400DF279A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -29,8 +29,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EAD0878C2987A7D600BB5245 /* Components.framework in Embed Frameworks */,
 				EAD087932987A7E100BB5245 /* Router.framework in Embed Frameworks */,
+				EAD088002987CE3200BB5245 /* Components.framework in Embed Frameworks */,
 				EAD087902987A7D900BB5245 /* Home.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -46,10 +46,11 @@
 		EAD0878E2987A7D900BB5245 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD087912987A7E100BB5245 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateExtension.swift; sourceTree = "<group>"; };
+		EAD087CD2987AC3700BB5245 /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		EAD087FE2987CE3200BB5245 /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE14FCB2987A46200DF279A /* Pokemon-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE14FCE2987A46200DF279A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE14FD02987A46200DF279A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EAE14FD22987A46200DF279A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAE14FD72987A46400DF279A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE14FDA2987A46400DF279A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE14FDC2987A46400DF279A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD0878B2987A7D600BB5245 /* Components.framework in Frameworks */,
 				EAD087922987A7E100BB5245 /* Router.framework in Frameworks */,
 				73C654DD0EC0CA0EFB94B773 /* Pods_Pokemon_MVVM.framework in Frameworks */,
+				EAD087FF2987CE3200BB5245 /* Components.framework in Frameworks */,
 				EAD0878F2987A7D900BB5245 /* Home.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +83,7 @@
 		556C6B12DEFAE5563C0D23D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAD087FE2987CE3200BB5245 /* Components.framework */,
 				EAD087912987A7E100BB5245 /* Router.framework */,
 				EAD0878E2987A7D900BB5245 /* Home.framework */,
 				EAD0878A2987A7D600BB5245 /* Components.framework */,
@@ -96,6 +98,14 @@
 				EAD087952987A8BA00BB5245 /* SceneDelegateExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		EAD087CC2987AC2900BB5245 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087CD2987AC3700BB5245 /* UITabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		EAE14FC22987A46200DF279A = {
@@ -119,9 +129,9 @@
 		EAE14FCD2987A46200DF279A /* Pokemon-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EAD087CC2987AC2900BB5245 /* TabBar */,
 				EAD087942987A8AA00BB5245 /* Extension */,
 				EAE14FE22987A66600DF279A /* Delegate */,
-				EAE14FD22987A46200DF279A /* ViewController.swift */,
 				EAE14FD72987A46400DF279A /* Assets.xcassets */,
 				EAE14FD92987A46400DF279A /* LaunchScreen.storyboard */,
 				EAE14FDC2987A46400DF279A /* Info.plist */,
@@ -253,9 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE14FD32987A46200DF279A /* ViewController.swift in Sources */,
 				EAD087962987A8BA00BB5245 /* SceneDelegateExtension.swift in Sources */,
 				EAE14FCF2987A46200DF279A /* AppDelegate.swift in Sources */,
+				EAD087CE2987AC3700BB5245 /* UITabBarController.swift in Sources */,
 				EAE14FD12987A46200DF279A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
