@@ -7,6 +7,7 @@ protocol DetailPkemonRemoteDataSourceProtocol: AnyObject {
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void)
     func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void)
     func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void)
+    func getDetailPokemonWithName(with name: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void)
 }
 
 final class DetailPokemonRemoteDataSource: NSObject {
@@ -18,6 +19,25 @@ final class DetailPokemonRemoteDataSource: NSObject {
 extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
         let endpoint = url
+        AF.request(
+            endpoint,
+            method: .get,
+            encoding: URLEncoding.queryString
+        )
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: DetailPokemonResponse.self) { data in
+                switch data.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func getDetailPokemonWithName(with name: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
+        let endpoint = "\(APIService.basePath)pokemon/\(name)/"
+        print("requested is \(endpoint)")
         AF.request(
             endpoint,
             method: .get,

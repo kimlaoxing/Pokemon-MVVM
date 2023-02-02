@@ -101,6 +101,11 @@ final class DetailPokemonViewController: UIViewController {
             guard let self = self, let data = data else { return }
             self.descriptionPokemon.setDescription(with: data)
         }).disposed(by: bag)
+        
+        self.viewModel?.imagesEvolution.subscribe(onNext: { [weak self] data in
+            guard let self = self else { return }
+            self.evolutionTableView.reloadData()
+        }).disposed(by: bag)
     }
     
     private func handleState(with state: BaseViewState) {
@@ -209,8 +214,8 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
         case evolutionTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPokemonEvolutionCell",
                                                      for: indexPath) as! DetailPokemonEvolutionCell
-            guard let data = self.viewModel?.listEvolution.value  else { return UITableViewCell() }
-            cell.setContent(with: data, indexPath: indexPath)
+            guard let data = self.viewModel?.listEvolution.value, let images = self.viewModel?.imagesEvolution.value  else { return UITableViewCell() }
+            cell.setContent(with: data, indexPath: indexPath, image: images)
             return cell
         default:
             return UITableViewCell()

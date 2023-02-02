@@ -1,6 +1,5 @@
 import Declayout
 import Components
-import UIKit
 
 final class DetailPokemonEvolutionCell: UITableViewCell {
     
@@ -89,21 +88,25 @@ final class DetailPokemonEvolutionCell: UITableViewCell {
         ])
     }
     
-    func setContent(with firstEvolve: EvolutionChainsResponse, indexPath: IndexPath) {
-        guard let id = firstEvolve.id else { return }
+    func setContent(with firstEvolve: EvolutionChainsResponse, indexPath: IndexPath, image: [String]) {
         switch indexPath.row {
         case 0:
             self.leftTitle.text = firstEvolve.chain?.species?.name ?? ""
             self.rightTitle.text = firstEvolve.chain?.evolvesTo?[0].species?.name ?? ""
             self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?[0].evolutionDetails?[0].minLevel ?? 0)"
-            self.leftImage.loadImage(url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png", placeholder: UIImage())
-            self.rightImage.loadImage(url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png", placeholder: UIImage())
+            if image.count >= 2 {
+                self.leftImage.loadImage(url: image[0], placeholder: UIImage())
+                self.rightImage.loadImage(url: image[1], placeholder: UIImage())
+            }
         case 1:
             self.leftTitle.text = firstEvolve.chain?.evolvesTo?[0].species?.name ?? ""
             self.rightTitle.text = firstEvolve.chain?.evolvesTo?[0].evolvesTo?[0].species?.name ?? ""
             self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?[0].evolvesTo?[0].evolutionDetails?[0].minLevel ?? 0)"
-            self.leftImage.loadImage(url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png", placeholder: UIImage())
-            self.rightImage.loadImage(url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png", placeholder: UIImage())
+            self.leftImage.loadImage(url: image[1], placeholder: UIImage())
+            
+            if image.count >= 3 {
+                self.rightImage.loadImage(url: image[2], placeholder: UIImage())
+            }
         default:
             break
         }
