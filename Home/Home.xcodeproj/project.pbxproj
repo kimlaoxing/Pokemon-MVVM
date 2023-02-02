@@ -18,6 +18,8 @@
 		EA48B532298A57C9008CB8C0 /* AbilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48B531298A57C9008CB8C0 /* AbilityResponse.swift */; };
 		EA48B535298A5AF4008CB8C0 /* DetailPokemonAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48B534298A5AF4008CB8C0 /* DetailPokemonAbility.swift */; };
 		EA48B53A298A5C0D008CB8C0 /* DetailPokemonAbilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48B539298A5C0D008CB8C0 /* DetailPokemonAbilityCell.swift */; };
+		EA846CFA298B5A54006893FA /* EvolutionChainsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA846CF9298B5A54006893FA /* EvolutionChainsResponse.swift */; };
+		EA846CFC298B5BFF006893FA /* DetailPokemonChangeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA846CFB298B5BFF006893FA /* DetailPokemonChangeSectionView.swift */; };
 		EA8EF460298A182800F577D5 /* DetailPokemonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8EF45F298A182800F577D5 /* DetailPokemonStatus.swift */; };
 		EAB07919298955BC00EEF27F /* DetailPokemonRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB07918298955BC00EEF27F /* DetailPokemonRemote.swift */; };
 		EAB0791B2989565700EEF27F /* DetailPokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0791A2989565700EEF27F /* DetailPokemonRepository.swift */; };
@@ -68,6 +70,8 @@
 		EA48B531298A57C9008CB8C0 /* AbilityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityResponse.swift; sourceTree = "<group>"; };
 		EA48B534298A5AF4008CB8C0 /* DetailPokemonAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonAbility.swift; sourceTree = "<group>"; };
 		EA48B539298A5C0D008CB8C0 /* DetailPokemonAbilityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonAbilityCell.swift; sourceTree = "<group>"; };
+		EA846CF9298B5A54006893FA /* EvolutionChainsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionChainsResponse.swift; sourceTree = "<group>"; };
+		EA846CFB298B5BFF006893FA /* DetailPokemonChangeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonChangeSectionView.swift; sourceTree = "<group>"; };
 		EA8EF45F298A182800F577D5 /* DetailPokemonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonStatus.swift; sourceTree = "<group>"; };
 		EAB07918298955BC00EEF27F /* DetailPokemonRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonRemote.swift; sourceTree = "<group>"; };
 		EAB0791A2989565700EEF27F /* DetailPokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonRepository.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				EA48B531298A57C9008CB8C0 /* AbilityResponse.swift */,
+				EA846CF9298B5A54006893FA /* EvolutionChainsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				EA8EF45F298A182800F577D5 /* DetailPokemonStatus.swift */,
 				EA48B534298A5AF4008CB8C0 /* DetailPokemonAbility.swift */,
 				EA3D3418298A9D1200CD3BEC /* DetailPokemonSpiritesView.swift */,
+				EA846CFB298B5BFF006893FA /* DetailPokemonChangeSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				EAD087F32987BDBA00BB5245 /* ListPokemonInjection.swift in Sources */,
 				EAD087EF2987BBE800BB5245 /* ListPokemonDomain.swift in Sources */,
 				EAB07920298957E800EEF27F /* DetailPokemonInjection.swift in Sources */,
+				EA846CFA298B5A54006893FA /* EvolutionChainsResponse.swift in Sources */,
 				EAD087E92987B10800BB5245 /* ListPokemonRepository.swift in Sources */,
 				EA48B53A298A5C0D008CB8C0 /* DetailPokemonAbilityCell.swift in Sources */,
 				EA3547082987D3AF005B6BFE /* DetailPokemonResponse.swift in Sources */,
@@ -493,6 +500,7 @@
 				EAB079222989587F00EEF27F /* DetailPokemonViewController.swift in Sources */,
 				EAD087E72987B07400BB5245 /* ListPokemonRemote.swift in Sources */,
 				EAB07919298955BC00EEF27F /* DetailPokemonRemote.swift in Sources */,
+				EA846CFC298B5BFF006893FA /* DetailPokemonChangeSectionView.swift in Sources */,
 				EAB079242989588800EEF27F /* DetailPokemonViewModel.swift in Sources */,
 				EA48B532298A57C9008CB8C0 /* AbilityResponse.swift in Sources */,
 			);

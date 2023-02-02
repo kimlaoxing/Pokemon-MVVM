@@ -1,7 +1,6 @@
 import Foundation
 import Declayout
 import RxSwift
-import UIKit
 import Components
 
 final class DetailPokemonViewController: UIViewController {
@@ -17,8 +16,13 @@ final class DetailPokemonViewController: UIViewController {
         didSet { abilityTableViewHeight?.activated() }
     }
     
+    private var evolutionTableViewHeight: NSLayoutConstraint? {
+        didSet { evolutionTableViewHeight?.activated() }
+    }
+    
     private lazy var header = DetailPokemonHeader()
     private lazy var status = DetailPokemonStatus()
+    private lazy var sectionButton = DetailPokemonChangeSectionView()
     private lazy var ability = DetailPokemonAbility()
     private lazy var spirites = DetailPokemonSpiritesView()
     
@@ -30,22 +34,34 @@ final class DetailPokemonViewController: UIViewController {
         $0.isScrollEnabled = false
     }
     
+    private lazy var evolutionTableView = UITableView.make {
+        $0.delegate = self
+        $0.dataSource = self
+        $0.register(DetailPokemonAbilityCell.self, forCellReuseIdentifier: "EvolutionTableView")
+        $0.allowsMultipleSelectionDuringEditing = false
+        $0.isScrollEnabled = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBlue
         bind()
         subViews()
         configureTableView()
+        configureButton()
+        defaultSection()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         abilityTableView.addObserver(self, forKeyPath: UITableView.contentSizeKeyPath, options: .new, context: nil)
+        evolutionTableView.addObserver(self, forKeyPath: UITableView.contentSizeKeyPath, options: .new, context: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         abilityTableView.removeObserver(self, forKeyPath: UITableView.contentSizeKeyPath, context: nil)
+        evolutionTableView.removeObserver(self, forKeyPath: UITableView.contentSizeKeyPath, context: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -53,6 +69,7 @@ final class DetailPokemonViewController: UIViewController {
             let newsize  = newvalue as! CGSize
             self.scrollView.layoutIfNeeded()
             self.abilityTableViewHeight?.constant = newsize.height
+            self.evolutionTableViewHeight?.constant = newsize.height
         }
     }
     
@@ -61,13 +78,13 @@ final class DetailPokemonViewController: UIViewController {
             guard let self = self, let data = data else { return }
             self.header.setContent(with: data)
             self.status.setContent(with: data)
-            self.abilityTableView.reloadData()
             self.spirites.setContent(with: data)
         }).disposed(by: bag)
         
         self.viewModel?.listAbility.subscribe(onNext: { [weak self] data in
             guard let self = self else { return }
             self.abilityTableView.reloadData()
+            self.evolutionTableView.reloadData()
         }).disposed(by: bag)
         
         self.viewModel?.state.subscribe(onNext: { [weak self] state in
@@ -93,6 +110,8 @@ final class DetailPokemonViewController: UIViewController {
         view.addSubviews([
             scrollView.addArrangedSubViews([
                 header,
+                sectionButton,
+                evolutionTableView,
                 status,
                 ability,
                 abilityTableView,
@@ -105,6 +124,41 @@ final class DetailPokemonViewController: UIViewController {
         abilityTableViewHeight = abilityTableView.heightAnchor.constraint(equalToConstant: 1)
         abilityTableViewHeight?.priority = UILayoutPriority.init(999)
         abilityTableViewHeight?.isActive = true
+        
+        evolutionTableViewHeight = evolutionTableView.heightAnchor.constraint(equalToConstant: 1)
+        evolutionTableViewHeight?.priority = UILayoutPriority.init(999)
+        evolutionTableViewHeight?.isActive = true
+    }
+    
+    private func configureButton() {
+        self.sectionButton.statLabelSelectCallBack = {
+            self.statButtonDidTapped()
+        }
+        
+        self.sectionButton.evolitionLabelSelectCallBack = {
+            self.evolutionButtonDidTapped()
+        }
+    }
+    
+    private func statButtonDidTapped() {
+        self.status.isHidden = false
+        self.ability.isHidden = false
+        self.abilityTableView.isHidden = false
+        self.spirites.isHidden = false
+        self.evolutionTableView.isHidden = true
+    }
+    
+    private func evolutionButtonDidTapped() {
+        self.status.isHidden = true
+        self.ability.isHidden = true
+        self.abilityTableView.isHidden = true
+        self.spirites.isHidden = true
+        
+        self.evolutionTableView.isHidden = false
+    }
+    
+    private func defaultSection() {
+        self.evolutionTableView.isHidden = true
     }
 }
 
@@ -112,15 +166,34 @@ final class DetailPokemonViewController: UIViewController {
 extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = self.viewModel?.listAbility.value.count ?? 0
-        return count
+        switch tableView {
+        case abilityTableView:
+            let count = self.viewModel?.listAbility.value.count ?? 0
+            return count
+        case evolutionTableView:
+            let count = self.viewModel?.listAbility.value.count ?? 0
+            return count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPokemonAbilityCell",
-                                                 for: indexPath) as! DetailPokemonAbilityCell
-        cell.setContent(with: self.viewModel?.listAbility.value[indexPath.row].flavorTextEntries?.first?.flavorText ?? "",
-                        title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
-        return cell
+        switch tableView {
+        case abilityTableView:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPokemonAbilityCell",
+                                                     for: indexPath) as! DetailPokemonAbilityCell
+            cell.setContent(with: self.viewModel?.listAbility.value[indexPath.row].flavorTextEntries?.first?.flavorText ?? "-",
+                            title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
+            return cell
+        case evolutionTableView:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EvolutionTableView",
+                                                     for: indexPath) as! DetailPokemonAbilityCell
+            cell.setContent(with: self.viewModel?.listAbility.value[indexPath.row].flavorTextEntries?.first?.flavorText ?? "-",
+                            title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }

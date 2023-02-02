@@ -7,6 +7,7 @@ public class RoundedButton: UIView {
         $0.height(Padding.NORMAL_CONTENT_INSET * 0.7)
         $0.layer.cornerRadius = 15
         $0.edges(to: self)
+        $0.backgroundColor = .systemBlue
     }
     
     private lazy var label = UILabel.make {
@@ -34,8 +35,17 @@ public class RoundedButton: UIView {
         ])
     }
     
-    public func setContent(with title: String, color: UIColor) {
+    public func setContent(with title: String) {
         label.text = title
-        self.container.backgroundColor = color
+    }
+    
+    public func setContentWhenTapped() {
+        label.textColor = .white
+        self.container.backgroundColor = .systemBlue
+    }
+    
+    public func setContentWhenDidTapped() {
+        label.textColor = .systemBlue
+        self.container.backgroundColor = .white
     }
 }

@@ -1,12 +1,13 @@
 import Declayout
-import UIKit
+import Components
 
 final class DetailPokemonAbility: UIView {
     
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
-        $0.edges(to: self)
-        $0.backgroundColor = .white
+        $0.top(to: self, Padding.double)
+        $0.bottom(to: self)
+        $0.horizontalPadding(to: self)   
     }
     
     private lazy var title = UILabel.make {
@@ -19,6 +20,7 @@ final class DetailPokemonAbility: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         subViews()
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

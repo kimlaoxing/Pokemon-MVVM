@@ -86,8 +86,8 @@ final class DetailPokemonSpiritesView: UIView {
     }
     
     func setContent(with response: DetailPokemonResponse) {
-        normalImageSpirites.loadImage(uri: response.sprites?.frontDefault, placeholder: UIImage())
-        shinyImageSpirites.loadImage(uri: response.sprites?.frontShiny, placeholder: UIImage())
+        normalImageSpirites.loadImage(url: response.sprites?.frontDefault, placeholder: UIImage())
+        shinyImageSpirites.loadImage(url: response.sprites?.frontShiny, placeholder: UIImage())
     }
 }
 

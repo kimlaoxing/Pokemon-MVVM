@@ -33,7 +33,6 @@ extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void) {
         let endpoint = url
-        print("endpoint is \(endpoint)")
         AF.request(endpoint,
                    method: .get,
                    encoding: URLEncoding.queryString

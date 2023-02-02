@@ -51,6 +51,6 @@ final class ListPokemonTableViewCell: UITableViewCell {
     
     func setContent(with list: DetailPokemonResult) {
         self.title.text = list.name
-        self.backgroundImage.loadImage(uri: list.image, placeholder: UIImage())
+        self.backgroundImage.loadImage(url: list.image, placeholder: UIImage())
     }
 }

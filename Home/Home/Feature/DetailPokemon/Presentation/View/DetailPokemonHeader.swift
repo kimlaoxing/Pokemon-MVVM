@@ -62,8 +62,8 @@ final class DetailPokemonHeader: UIView {
     }
     
     func setContent(with data: DetailPokemonResponse) {
-        self.imagePokemon.loadImage(uri: data.sprites?.other?.officialArtwork?.frontDefault ?? "", placeholder: UIImage())
+        self.imagePokemon.loadImage(url: data.sprites?.other?.officialArtwork?.frontDefault ?? "", placeholder: UIImage())
         self.namePokemon.text = data.name
-        self.elementLabel.setContent(with: data.types?.first?.type?.name ?? "-", color: .systemBlue)
+        self.elementLabel.setContent(with: data.types?.first?.type?.name ?? "-")
     }
 }

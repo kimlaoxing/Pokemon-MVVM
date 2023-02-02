@@ -27,9 +27,9 @@ public final class StatusBar: UIView {
     }
     
     private lazy var statusBarBackground = UIView.make {
-        $0.backgroundColor = .systemGray
+        $0.backgroundColor = .systemGray4
         $0.layer.cornerRadius = 5
-        $0.width(150)
+        $0.width(200)
     }
     
     private lazy var statuBarFilled = UIView.make {
@@ -64,6 +64,6 @@ public final class StatusBar: UIView {
         self.nameStat.text = nameStat
         self.numberStat.text = numberStat
         self.statuBarFilled.leading(to: statusBarBackground, 0)
-        self.statuBarFilled.trailing(to: statusBarBackground, CGFloat(100 - statusBar))
+        self.statuBarFilled.trailing(to: statusBarBackground, CGFloat(200 - statusBar * 2))
     }
 }
