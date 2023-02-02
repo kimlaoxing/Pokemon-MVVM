@@ -28,6 +28,8 @@ final class DetailPokemonViewController: UIViewController {
     private lazy var sectionButton = DetailPokemonChangeSectionView()
     private lazy var ability = DetailPokemonAbility()
     private lazy var spirites = DetailPokemonSpiritesView()
+    private lazy var breeding = DetailPokemonBreedingView()
+    private lazy var capture = DetailPokemonCaptureView()
     
     private lazy var abilityTableView = UITableView.make {
         $0.delegate = self
@@ -97,6 +99,8 @@ final class DetailPokemonViewController: UIViewController {
         self.viewModel?.detailPokemonSpecies.subscribe(onNext: { [weak self] data in
             guard let self = self, let data = data else { return }
             self.descriptionPokemon.setDescription(with: data)
+            self.breeding.setContent(with: data)
+            self.capture.setContent(with: data)
         }).disposed(by: bag)
         
         self.viewModel?.imagesEvolution.subscribe(onNext: { [weak self] data in
@@ -128,6 +132,8 @@ final class DetailPokemonViewController: UIViewController {
                 status,
                 ability,
                 abilityTableView,
+                breeding,
+                capture,
                 spirites
             ])
         ])
@@ -158,6 +164,8 @@ final class DetailPokemonViewController: UIViewController {
         self.ability.isHidden = false
         self.abilityTableView.isHidden = false
         self.spirites.isHidden = false
+        self.breeding.isHidden = false
+        self.capture.isHidden = false
         self.evolutionTableView.isHidden = true
     }
     
@@ -165,8 +173,9 @@ final class DetailPokemonViewController: UIViewController {
         self.status.isHidden = true
         self.ability.isHidden = true
         self.abilityTableView.isHidden = true
+        self.breeding.isHidden = true
+        self.capture.isHidden = true
         self.spirites.isHidden = true
-        
         self.evolutionTableView.isHidden = false
     }
     

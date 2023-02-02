@@ -38,7 +38,6 @@ final class DetailPokemonChangeSectionView: UIView {
         super.init(coder: coder)
     }
     
-    
     private func subViews() {
         addSubviews([
             container.addArrangedSubviews([

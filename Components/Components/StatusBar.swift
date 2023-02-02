@@ -27,7 +27,7 @@ public final class StatusBar: UIView {
     }
     
     private lazy var statusBarBackground = UIView.make {
-        $0.backgroundColor = .systemGray4
+        $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 5
         $0.width(200)
     }

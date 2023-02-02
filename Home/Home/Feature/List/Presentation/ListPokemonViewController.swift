@@ -27,6 +27,7 @@ final class ListPokemonViewController: UIViewController {
         $0.register(ListPokemonTableViewCell.self, forCellReuseIdentifier: "ListPokemonTableViewCell")
         $0.allowsMultipleSelectionDuringEditing = false
         $0.backgroundColor = .white
+        $0.separatorStyle = .none
     }
     
     override func viewDidLoad() {

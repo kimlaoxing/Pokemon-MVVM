@@ -44,7 +44,7 @@ final class DetailPokemonAbilityCell: UITableViewCell {
     }
     
     func setContent(with ability: String, title: String) {
-        self.titleLabel.text = title
+        self.titleLabel.text = title.capitalizedSentence
         self.descriptionLabel.text = ability
     }
 }

@@ -1,13 +1,24 @@
 import Declayout
 import Components
+import UIKit
 
 final class ListPokemonTableViewCell: UITableViewCell {
+    
+    private lazy var container = UIStackView.make {
+        $0.axis = .vertical
+        $0.spacing = Padding.half
+        $0.horizontalPadding(to: contentView, Padding.double)
+        $0.verticalPadding(to: contentView, Padding.reguler)
+    }
     
     private lazy var containerView = UIStackView.make {
         $0.axis = .horizontal
         $0.distribution = .equalSpacing
-        $0.horizontalPadding(to: contentView, Padding.double)
-        $0.verticalPadding(to: contentView, Padding.reguler)
+    }
+    
+    private lazy var separator = UIView.make {
+        $0.height(1)
+        $0.backgroundColor = .systemGray6
     }
     
     private lazy var hStack = UIStackView.make {
@@ -30,6 +41,7 @@ final class ListPokemonTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .white
         subViews()
     }
     
@@ -40,17 +52,20 @@ final class ListPokemonTableViewCell: UITableViewCell {
     
     private func subViews() {
         contentView.addSubviews([
-            containerView.addArrangedSubviews([
-                hStack.addArrangedSubviews([
-                    backgroundImage,
-                    title
-                ])
+            container.addArrangedSubviews([
+                containerView.addArrangedSubviews([
+                    hStack.addArrangedSubviews([
+                        backgroundImage,
+                        title
+                    ])
+                ]),
+                separator
             ])
         ])
     }
     
     func setContent(with list: DetailPokemonResult) {
-        self.title.text = list.name
+        self.title.text = list.name.capitalizedSentence
         self.backgroundImage.loadImage(url: list.image, placeholder: UIImage())
     }
 }

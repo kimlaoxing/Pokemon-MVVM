@@ -2,19 +2,19 @@ import Foundation
 
 public struct DetailPokemonSpecies: Codable {
     //    public let baseHappiness: Int?
-    //    public let captureRate: Int?
+    public let captureRate: Int?
     //    public let color: Color?
-    //    public let eggGroups: [Color]?
+    public let eggGroups: [Color]?
     public let evolutionChain: EvolutionChain?
     public let flavorTextEntries: [FlavorTextEntry]?
     //    public let formsSwitchable: Bool?
-    //    public let genderRate: Int?
+    public let genderRate: Int?
     //    public let genera: [Genus]?
-    //    public let generation: Color?
+    public let generation: Color?
     //    public let growthRate: Color?
-    //    public let habitat: Color?
+    public let habitat: Color?
     //    public let hasGenderDifferences: Bool?
-    //    public let hatchCounter: Int?
+    public let hatchCounter: Int?
     //    public let id: Int?
     //    public let isBaby: Bool?
     //    public let isLegendary: Bool?
@@ -29,19 +29,19 @@ public struct DetailPokemonSpecies: Codable {
     
     enum CodingKeys: String, CodingKey {
         //        case baseHappiness = "base_happiness"
-        //        case captureRate = "capture_rate"
+        case captureRate = "capture_rate"
         //        case color = "color"
-        //        case eggGroups = "egg_groups"
+        case eggGroups = "egg_groups"
         case evolutionChain = "evolution_chain"
         case flavorTextEntries = "flavor_text_entries"
         //        case formsSwitchable = "forms_switchable"
-        //        case genderRate = "gender_rate"
+        case genderRate = "gender_rate"
         //        case genera = "genera"
-        //        case generation = "generation"
+        case generation = "generation"
         //        case growthRate = "growth_rate"
-        //        case habitat = "habitat"
+        case habitat = "habitat"
         //        case hasGenderDifferences = "has_gender_differences"
-        //        case hatchCounter = "hatch_counter"
+        case hatchCounter = "hatch_counter"
         //        case id = "id"
         //        case isBaby = "is_baby"
         //        case isLegendary = "is_legendary"
@@ -58,19 +58,19 @@ public struct DetailPokemonSpecies: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         //        self.baseHappiness = try container.decodeWrapper(key: .baseHappiness, defaultValue: 0)
-        //        self.captureRate = try container.decodeWrapper(key: .captureRate, defaultValue: 0)
+        self.captureRate = try container.decodeWrapper(key: .captureRate, defaultValue: 0)
         //        self.color = try container.decodeWrapper(key: .color, defaultValue: nil)
-        //        self.eggGroups = try container.decodeWrapper(key: .color, defaultValue: [])
+        self.eggGroups = try container.decodeWrapper(key: .eggGroups, defaultValue: [])
         self.evolutionChain = try container.decodeWrapper(key: .evolutionChain, defaultValue: nil)
         self.flavorTextEntries = try container.decodeWrapper(key: .flavorTextEntries, defaultValue: [])
         //        self.formsSwitchable = try container.decodeWrapper(key: .formsSwitchable, defaultValue: false)
-        //        self.genderRate = try container.decodeWrapper(key: .genderRate, defaultValue: 0)
+        self.genderRate = try container.decodeWrapper(key: .genderRate, defaultValue: 0)
         //        self.genera = try container.decodeWrapper(key: .genera, defaultValue: [])
-        //        self.generation = try container.decodeWrapper(key: .generation, defaultValue: nil)
+        self.generation = try container.decodeWrapper(key: .generation, defaultValue: nil)
         //        self.growthRate = try container.decodeWrapper(key: .growthRate, defaultValue: nil)
-        //        self.habitat = try container.decodeWrapper(key: .habitat, defaultValue: nil)
+        self.habitat = try container.decodeWrapper(key: .habitat, defaultValue: nil)
         //        self.hasGenderDifferences = try container.decodeWrapper(key: .hasGenderDifferences, defaultValue: false)
-        //        self.hatchCounter = try container.decodeWrapper(key: .hatchCounter, defaultValue: 0)
+        self.hatchCounter = try container.decodeWrapper(key: .hatchCounter, defaultValue: 0)
         //        self.id = try container.decodeWrapper(key: .id, defaultValue: 0)
         //        self.isBaby = try container.decodeWrapper(key: .isBaby, defaultValue: false)
         //        self.isLegendary = try container.decodeWrapper(key: .isLegendary, defaultValue: false)
@@ -85,21 +85,21 @@ public struct DetailPokemonSpecies: Codable {
     }
     
     
-    //    public struct Color: Codable {
-    //        public let name: String?
-    //        public let url: String?
-    //
-    //        enum CodingKeys: String, CodingKey {
-    //            case name = "name"
-    //            case url = "url"
-    //        }
-    //
-    //        public init(from decoder: Decoder) throws {
-    //            let container = try decoder.container(keyedBy: CodingKeys.self)
-    //            self.name = try container.decodeWrapper(key: .name, defaultValue: "")
-    //            self.url = try container.decodeWrapper(key: .url, defaultValue: "")
-    //        }
-    //    }
+    public struct Color: Codable {
+        public let name: String?
+        public let url: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case name = "name"
+            case url = "url"
+        }
+        
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.name = try container.decodeWrapper(key: .name, defaultValue: "")
+            self.url = try container.decodeWrapper(key: .url, defaultValue: "")
+        }
+    }
     
     public struct EvolutionChain: Codable {
         public let url: String?
