@@ -9,7 +9,9 @@ final class DetailPokemonViewController: UIViewController {
     let bag = DisposeBag()
     
     private lazy var scrollView = ScrollViewContainer.make {
-        $0.edges(to: view)
+        $0.horizontalPadding(to: view)
+        $0.top(to: view, Padding.double * 2)
+        $0.bottom(to: view)
     }
     
     private var abilityTableViewHeight: NSLayoutConstraint? {
@@ -45,7 +47,7 @@ final class DetailPokemonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBlue
+        self.view.backgroundColor = .white
         bind()
         subViews()
         configureTableView()
@@ -91,12 +93,7 @@ final class DetailPokemonViewController: UIViewController {
             guard let self = self, let state = state else  { return }
             self.handleState(with: state)
         }).disposed(by: bag)
-        
-        self.viewModel?.listEvolution.subscribe(onNext: { [weak self] data in
-            guard let self = self else { return }
-            self.evolutionTableView.reloadData()
-        }).disposed(by: bag)
-        
+                
         self.viewModel?.detailPokemonSpecies.subscribe(onNext: { [weak self] data in
             guard let self = self, let data = data else { return }
             self.descriptionPokemon.setDescription(with: data)
@@ -187,7 +184,7 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
             let count = self.viewModel?.listAbility.value.count ?? 0
             return count
         case evolutionTableView:
-            if let firstEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?.count, let secondEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?[0].evolvesTo?.count {
+            if let firstEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?.count, let secondEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?.first?.evolvesTo?.count {
                 if secondEvo != 0 {
                     return 2
                 } else if firstEvo != 0 {

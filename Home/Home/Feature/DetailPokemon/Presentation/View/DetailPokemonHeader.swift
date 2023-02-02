@@ -8,6 +8,7 @@ final class DetailPokemonHeader: UIView {
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
         $0.edges(to: self)
+        $0.spacing = Padding.reguler
     }
     
     private lazy var imagePokemon = UIImageView.make {
@@ -24,6 +25,7 @@ final class DetailPokemonHeader: UIView {
     private lazy var roundedStack = UIStackView.make {
         $0.edges(to: roundedContainer)
         $0.axis = .vertical
+        $0.spacing = Padding.half
     }
     
     private lazy var namePokemon = UILabel.make {

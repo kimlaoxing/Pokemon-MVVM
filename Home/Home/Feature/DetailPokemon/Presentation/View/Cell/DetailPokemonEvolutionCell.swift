@@ -92,16 +92,16 @@ final class DetailPokemonEvolutionCell: UITableViewCell {
         switch indexPath.row {
         case 0:
             self.leftTitle.text = firstEvolve.chain?.species?.name ?? ""
-            self.rightTitle.text = firstEvolve.chain?.evolvesTo?[0].species?.name ?? ""
-            self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?[0].evolutionDetails?[0].minLevel ?? 0)"
+            self.rightTitle.text = firstEvolve.chain?.evolvesTo?.first?.species?.name ?? ""
+            self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?.first?.evolutionDetails?.first?.minLevel ?? 0)"
             if image.count >= 2 {
-                self.leftImage.loadImage(url: image[0], placeholder: UIImage())
+                self.leftImage.loadImage(url: image.first, placeholder: UIImage())
                 self.rightImage.loadImage(url: image[1], placeholder: UIImage())
             }
         case 1:
-            self.leftTitle.text = firstEvolve.chain?.evolvesTo?[0].species?.name ?? ""
-            self.rightTitle.text = firstEvolve.chain?.evolvesTo?[0].evolvesTo?[0].species?.name ?? ""
-            self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?[0].evolvesTo?[0].evolutionDetails?[0].minLevel ?? 0)"
+            self.leftTitle.text = firstEvolve.chain?.evolvesTo?.first?.species?.name ?? ""
+            self.rightTitle.text = firstEvolve.chain?.evolvesTo?.first?.evolvesTo?.first?.species?.name ?? ""
+            self.minimumLevelLabel.text = "Lv.\(firstEvolve.chain?.evolvesTo?.first?.evolvesTo?.first?.evolutionDetails?.first?.minLevel ?? 0)"
             self.leftImage.loadImage(url: image[1], placeholder: UIImage())
             
             if image.count >= 3 {

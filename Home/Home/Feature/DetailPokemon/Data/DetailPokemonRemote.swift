@@ -37,7 +37,6 @@ extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     
     func getDetailPokemonWithName(with name: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
         let endpoint = "\(APIService.basePath)pokemon/\(name)/"
-        print("requested is \(endpoint)")
         AF.request(
             endpoint,
             method: .get,
@@ -74,7 +73,6 @@ extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     
     func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void) {
         let endpoint = url
-        print("url \(endpoint)")
         AF.request(
             endpoint,
             method: .get,

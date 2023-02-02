@@ -81,7 +81,7 @@ extension DefaultListPokemonViewModel {
                 self.error.accept("\(error)")
                 self.popUpError()
             case .success(let data):
-                self.totalPage = 1000
+                //                self.totalPage = 1000
                 //                if self.currentLimit == 1 {
                 //                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
                 //                    self.currentLimit += 1
