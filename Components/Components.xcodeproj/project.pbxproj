@@ -10,6 +10,7 @@
 		114047BFD2F0731108D8782D /* Pods_Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51523DC76401DC5B619042BE /* Pods_Components.framework */; };
 		EA3D3417298A8DDC00CD3BEC /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D3416298A8DDC00CD3BEC /* UITableViewExtension.swift */; };
 		EA48B537298A5B06008CB8C0 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48B536298A5B06008CB8C0 /* StatusBar.swift */; };
+		EA97F7A7298BCFB6003A55F5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA97F7A6298BCFB6003A55F5 /* StringExtension.swift */; };
 		EAB0792929895C6400EEF27F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0792829895C6400EEF27F /* RoundedButton.swift */; };
 		EAD087842987A79F00BB5245 /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD087832987A79F00BB5245 /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD087AC2987AA4300BB5245 /* BaseViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD087AB2987AA4300BB5245 /* BaseViewState.swift */; };
@@ -35,6 +36,7 @@
 		B74FB30B7C90B570DE597984 /* Pods-Components.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Components.release.xcconfig"; path = "Target Support Files/Pods-Components/Pods-Components.release.xcconfig"; sourceTree = "<group>"; };
 		EA3D3416298A8DDC00CD3BEC /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		EA48B536298A5B06008CB8C0 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		EA97F7A6298BCFB6003A55F5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EAB0792829895C6400EEF27F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EAD087802987A79F00BB5245 /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD087832987A79F00BB5245 /* Components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				EAB0792829895C6400EEF27F /* RoundedButton.swift */,
 				EA48B536298A5B06008CB8C0 /* StatusBar.swift */,
 				EA3D3416298A8DDC00CD3BEC /* UITableViewExtension.swift */,
+				EA97F7A6298BCFB6003A55F5 /* StringExtension.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				EAD087C42987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift in Sources */,
 				EAD087C22987AA9700BB5245 /* UICollectionViewExtension.swift in Sources */,
 				EAD087B22987AA5A00BB5245 /* DefaultCollectionView.swift in Sources */,
+				EA97F7A7298BCFB6003A55F5 /* StringExtension.swift in Sources */,
 				EAD087C82987AAB800BB5245 /* UIView.swift in Sources */,
 				EAB0792929895C6400EEF27F /* RoundedButton.swift in Sources */,
 				EAD087BC2987AA7F00BB5245 /* ScreenSize.swift in Sources */,

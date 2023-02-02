@@ -3,6 +3,8 @@ import Foundation
 protocol DetailPokemonRepositoryProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void)
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void)
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void)
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void)
 }
 
 final class DetailPokemonRepository: NSObject {
@@ -38,6 +40,28 @@ extension DetailPokemonRepository: DetailPokemonRepositoryProtocol {
                 completion(.failure(error))
             case .success(let data):
                 completion(.success(data))
+            }
+        }
+    }
+    
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void) {
+        self.remote.getListEvolutionChain(with: url) { data in
+            switch data {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                    completion(.success(data))
+            }
+        }
+    }
+    
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void) {
+        self.remote.getDetailPokemonSpecies(with: id) { data in
+            switch data {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                    completion(.success(data))
             }
         }
     }

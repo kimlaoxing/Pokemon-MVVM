@@ -89,7 +89,7 @@ public struct EvolutionChainsResponse: Codable {
 
                     public init(from decoder: Decoder) throws {
                         let container = try decoder.container(keyedBy: CodingKeys.self)
-                        self.name = try container.decodeWrapper(key: .url, defaultValue: "")
+                        self.name = try container.decodeWrapper(key: .name, defaultValue: "")
                         self.url = try container.decodeWrapper(key: .url, defaultValue: "")
                     }
                 }
@@ -106,7 +106,7 @@ public struct EvolutionChainsResponse: Codable {
 
                 public init(from decoder: Decoder) throws {
                     let container = try decoder.container(keyedBy: CodingKeys.self)
-                    self.name = try container.decodeWrapper(key: .url, defaultValue: "")
+                    self.name = try container.decodeWrapper(key: .name, defaultValue: "")
                     self.url = try container.decodeWrapper(key: .url, defaultValue: "")
                 }
             }
@@ -164,7 +164,7 @@ public struct EvolutionChainsResponse: Codable {
 
                         public init(from decoder: Decoder) throws {
                             let container = try decoder.container(keyedBy: CodingKeys.self)
-                            self.name = try container.decodeWrapper(key: .url, defaultValue: "")
+                            self.name = try container.decodeWrapper(key: .name, defaultValue: "")
                             self.url = try container.decodeWrapper(key: .url, defaultValue: "")
                         }
                     }
@@ -183,7 +183,7 @@ public struct EvolutionChainsResponse: Codable {
 
             public init(from decoder: Decoder) throws {
                 let container = try decoder.container(keyedBy: CodingKeys.self)
-                self.name = try container.decodeWrapper(key: .url, defaultValue: "")
+                self.name = try container.decodeWrapper(key: .name, defaultValue: "")
                 self.url = try container.decodeWrapper(key: .url, defaultValue: "")
             }
         }

@@ -72,7 +72,7 @@ extension DefaultListPokemonViewModel {
             }
         }
     }
-
+    
     func getListPokemon() {
         self.state.accept(.loading)
         self.useCase.getListPokemon(with: self.currentLimit) { data in
@@ -82,23 +82,27 @@ extension DefaultListPokemonViewModel {
                 self.popUpError()
             case .success(let data):
                 self.totalPage = 1000
-                if self.currentLimit == 1 {
-                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
-                    self.currentLimit += 1
-                    self.listPokemon.accept(data)
-                    for url in data {
-                        self.getDetail(with: url.url)
-                    }
-                } else {
-                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
-                    self.currentLimit += 1
-                    var newData: [ListPokemonResult] = []
-                    newData.append(contentsOf: self.listPokemon.value)
-                    newData.append(contentsOf: data)
-                    self.listPokemon.accept(newData)
-                    for url in newData {
-                        self.getDetail(with: url.url)
-                    }
+                //                if self.currentLimit == 1 {
+                //                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
+                //                    self.currentLimit += 1
+                //                    self.listPokemon.accept(data)
+                //                    for url in data {
+                //                        self.getDetail(with: url.url)
+                //                    }
+                //                } else {
+                //                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
+                //                    self.currentLimit += 1
+                //                    var newData: [ListPokemonResult] = []
+                //                    newData.append(contentsOf: self.listPokemon.value)
+                //                    newData.append(contentsOf: data)
+                //                    self.listPokemon.accept(newData)
+                //                    for url in newData {
+                //                        self.getDetail(with: url.url)
+                //                    }
+                //                }
+                self.listPokemon.accept(data)
+                for url in data {
+                    self.getDetail(with: url.url)
                 }
                 self.state.accept(.normal)
             }
@@ -114,7 +118,7 @@ extension DefaultListPokemonViewModel {
                 self.popUpError()
             case .success(let data):
                 self.listDetail.append(data)
-                self.detailPokemon.accept(self.listDetail)
+                self.detailPokemon.accept(self.listDetail.sorted(by: { $0.id < $1.id }))
                 self.state.accept(.normal)
             }
         }

@@ -21,6 +21,7 @@ final class DetailPokemonViewController: UIViewController {
     }
     
     private lazy var header = DetailPokemonHeader()
+    private lazy var descriptionPokemon = DetailPokemonDescription()
     private lazy var status = DetailPokemonStatus()
     private lazy var sectionButton = DetailPokemonChangeSectionView()
     private lazy var ability = DetailPokemonAbility()
@@ -37,7 +38,7 @@ final class DetailPokemonViewController: UIViewController {
     private lazy var evolutionTableView = UITableView.make {
         $0.delegate = self
         $0.dataSource = self
-        $0.register(DetailPokemonAbilityCell.self, forCellReuseIdentifier: "EvolutionTableView")
+        $0.register(DetailPokemonEvolutionCell.self, forCellReuseIdentifier: "DetailPokemonEvolutionCell")
         $0.allowsMultipleSelectionDuringEditing = false
         $0.isScrollEnabled = false
     }
@@ -84,12 +85,21 @@ final class DetailPokemonViewController: UIViewController {
         self.viewModel?.listAbility.subscribe(onNext: { [weak self] data in
             guard let self = self else { return }
             self.abilityTableView.reloadData()
-            self.evolutionTableView.reloadData()
         }).disposed(by: bag)
         
         self.viewModel?.state.subscribe(onNext: { [weak self] state in
             guard let self = self, let state = state else  { return }
             self.handleState(with: state)
+        }).disposed(by: bag)
+        
+        self.viewModel?.listEvolution.subscribe(onNext: { [weak self] data in
+            guard let self = self else { return }
+            self.evolutionTableView.reloadData()
+        }).disposed(by: bag)
+        
+        self.viewModel?.detailPokemonSpecies.subscribe(onNext: { [weak self] data in
+            guard let self = self, let data = data else { return }
+            self.descriptionPokemon.setDescription(with: data)
         }).disposed(by: bag)
     }
     
@@ -110,6 +120,7 @@ final class DetailPokemonViewController: UIViewController {
         view.addSubviews([
             scrollView.addArrangedSubViews([
                 header,
+                descriptionPokemon,
                 sectionButton,
                 evolutionTableView,
                 status,
@@ -171,8 +182,17 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
             let count = self.viewModel?.listAbility.value.count ?? 0
             return count
         case evolutionTableView:
-            let count = self.viewModel?.listAbility.value.count ?? 0
-            return count
+            if let firstEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?.count, let secondEvo = self.viewModel?.listEvolution.value?.chain?.evolvesTo?[0].evolvesTo?.count {
+                if secondEvo != 0 {
+                    return 2
+                } else if firstEvo != 0 {
+                    return 1
+                } else {
+                    return 0
+                }
+            } else {
+                return 0
+            }
         default:
             return 0
         }
@@ -187,10 +207,10 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
                             title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
             return cell
         case evolutionTableView:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EvolutionTableView",
-                                                     for: indexPath) as! DetailPokemonAbilityCell
-            cell.setContent(with: self.viewModel?.listAbility.value[indexPath.row].flavorTextEntries?.first?.flavorText ?? "-",
-                            title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPokemonEvolutionCell",
+                                                     for: indexPath) as! DetailPokemonEvolutionCell
+            guard let data = self.viewModel?.listEvolution.value  else { return UITableViewCell() }
+            cell.setContent(with: data, indexPath: indexPath)
             return cell
         default:
             return UITableViewCell()

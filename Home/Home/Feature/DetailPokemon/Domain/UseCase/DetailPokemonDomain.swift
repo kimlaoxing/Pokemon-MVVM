@@ -3,6 +3,8 @@ import Foundation
 protocol DetailPokemonUseCaseProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void)
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void)
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void)
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void)
 }
 
 class DetailPokemonInteractor: DetailPokemonUseCaseProtocol {
@@ -26,6 +28,28 @@ class DetailPokemonInteractor: DetailPokemonUseCaseProtocol {
     
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse, Error>) -> Void) {
         self.repository.getListAbility(with: url) { data in
+            switch data {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                completion(.success(data))
+            }
+        }
+    }
+    
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void) {
+        self.repository.getListEvolutionChain(with: url) { data in
+            switch data {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                completion(.success(data))
+            }
+        }
+    }
+    
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void) {
+        self.repository.getDetailPokemonSpecies(with: id) { data in
             switch data {
             case .failure(let error):
                 completion(.failure(error))

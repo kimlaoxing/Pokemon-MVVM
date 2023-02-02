@@ -5,6 +5,8 @@ import Components
 protocol DetailPkemonRemoteDataSourceProtocol: AnyObject {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void)
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void)
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void)
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void)
 }
 
 final class DetailPokemonRemoteDataSource: NSObject {
@@ -16,9 +18,10 @@ final class DetailPokemonRemoteDataSource: NSObject {
 extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     func getDetailPokemon(with url: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
         let endpoint = url
-        AF.request(endpoint,
-                   method: .get,
-                   encoding: URLEncoding.queryString
+        AF.request(
+            endpoint,
+            method: .get,
+            encoding: URLEncoding.queryString
         )
             .validate(statusCode: 200..<300)
             .responseDecodable(of: DetailPokemonResponse.self) { data in
@@ -33,12 +36,49 @@ extension DetailPokemonRemoteDataSource: DetailPkemonRemoteDataSourceProtocol {
     
     func getListAbility(with url: String, completion: @escaping (Result<AbilityResponse ,Error>) -> Void) {
         let endpoint = url
-        AF.request(endpoint,
-                   method: .get,
-                   encoding: URLEncoding.queryString
+        AF.request(
+            endpoint,
+            method: .get,
+            encoding: URLEncoding.queryString
         )
             .validate(statusCode: 200..<300)
             .responseDecodable(of: AbilityResponse.self) { data in
+                switch data.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func getListEvolutionChain(with url: String, completion: @escaping (Result<EvolutionChainsResponse, Error>) -> Void) {
+        let endpoint = url
+        print("url \(endpoint)")
+        AF.request(
+            endpoint,
+            method: .get,
+            encoding: URLEncoding.queryString
+        )
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: EvolutionChainsResponse.self) { data in
+                switch data.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func getDetailPokemonSpecies(with id: Int, completion: @escaping(Result<DetailPokemonSpecies, Error>) -> Void) {
+        let endpoint = "\(APIService.basePath)pokemon-species/\(id)"
+        AF.request(
+            endpoint,
+            method: .get,
+            encoding: JSONEncoding.default
+        )
+            .responseDecodable(of: DetailPokemonSpecies.self) { data in
                 switch data.result {
                 case .success(let data):
                     completion(.success(data))

@@ -57,7 +57,6 @@ public struct DetailPokemonResponse: Codable {
         self.types = try container.decodeWrapper(key: .types, defaultValue: [])
         self.weight = try container.decodeWrapper(key: .weight, defaultValue: 0)
     }
-    
 }
 
 public struct Ability: Codable {

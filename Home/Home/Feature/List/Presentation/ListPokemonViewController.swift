@@ -17,6 +17,7 @@ final class ListPokemonViewController: UIViewController {
         $0.image.image = UIImage(systemName: "nosign")
         $0.image.width(100)
         $0.image.tintColor = .black
+        $0.backgroundColor = .white
     }
     
     private lazy var tableView = UITableView.make {
@@ -25,6 +26,7 @@ final class ListPokemonViewController: UIViewController {
         $0.dataSource = self
         $0.register(ListPokemonTableViewCell.self, forCellReuseIdentifier: "ListPokemonTableViewCell")
         $0.allowsMultipleSelectionDuringEditing = false
+        $0.backgroundColor = .white
     }
     
     override func viewDidLoad() {
