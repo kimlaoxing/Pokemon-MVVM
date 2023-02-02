@@ -66,15 +66,14 @@ final class DetailPokemonViewController: UIViewController {
         }).disposed(by: bag)
         
         self.viewModel?.listAbility.subscribe(onNext: { [weak self] data in
-            guard let self = self, let data = data else { return }
+            guard let self = self else { return }
             self.abilityTableView.reloadData()
         }).disposed(by: bag)
         
         self.viewModel?.state.subscribe(onNext: { [weak self] state in
             guard let self = self, let state = state else  { return }
             self.handleState(with: state)
-        })
-       
+        }).disposed(by: bag)
     }
     
     private func handleState(with state: BaseViewState) {
@@ -113,15 +112,15 @@ final class DetailPokemonViewController: UIViewController {
 extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = self.viewModel?.detailPokemon.value?.abilities?.count ?? 0
+        let count = self.viewModel?.listAbility.value.count ?? 0
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPokemonAbilityCell",
                                                  for: indexPath) as! DetailPokemonAbilityCell
-        cell.setContent(with: "empty",
-                        title: self.viewModel?.detailPokemon.value?.abilities?[indexPath.row].ability?.name ?? "Empty Ability")
+        cell.setContent(with: self.viewModel?.listAbility.value[indexPath.row].flavorTextEntries?.first?.flavorText ?? "",
+                        title: self.viewModel?.listAbility.value[indexPath.row].name ?? "Empty Ability")
         return cell
     }
 }

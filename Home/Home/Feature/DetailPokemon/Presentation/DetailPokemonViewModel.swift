@@ -10,7 +10,7 @@ protocol DetailPokemonViewModelInput {
 
 protocol DetailPokemonViewModelOutput {
     var detailPokemon: BehaviorRelay<DetailPokemonResponse?> { get }
-    var listAbility: BehaviorRelay<AbilityResponse?> { get }
+    var listAbility: BehaviorRelay<[AbilityResponse]> { get }
     var state: BehaviorRelay<BaseViewState?> { get }
     var error: BehaviorRelay<String> { get }
 }
@@ -20,9 +20,11 @@ protocol DetailPokemonViewModel: DetailPokemonViewModelInput, DetailPokemonViewM
 final class DefaultDetailPokemonViewModel: DetailPokemonViewModel {
    
     let detailPokemon: BehaviorRelay<DetailPokemonResponse?> = BehaviorRelay.init(value: nil)
-    let listAbility: BehaviorRelay<AbilityResponse?> = BehaviorRelay.init(value: nil)
+    let listAbility: BehaviorRelay<[AbilityResponse]> = BehaviorRelay.init(value: [])
     let state: BehaviorRelay<BaseViewState?> = BehaviorRelay.init(value: .loading)
     let error: BehaviorRelay<String> = BehaviorRelay.init(value: "")
+    var abilities: [AbilityResponse] = []
+    
     private let useCase: DetailPokemonUseCaseProtocol
     private let router: Routes
     
@@ -66,7 +68,8 @@ extension DefaultDetailPokemonViewModel {
                 self.error.accept("\(error)")
             case .success(let data):
                 self.state.accept(.normal)
-                self.listAbility.accept(data)
+                self.abilities.append(data)
+                self.listAbility.accept(self.abilities)
             }
         }
     }

@@ -18,7 +18,7 @@ final class DetailPokemonAbilityCell: UITableViewCell {
     
     private lazy var descriptionLabel = UILabel.make {
         $0.font = .systemFont(ofSize: 10, weight: .regular)
-        $0.textColor = .systemBlue
+        $0.textColor = .systemGray2
         $0.textAlignment = .left
         $0.numberOfLines = 0
     }
