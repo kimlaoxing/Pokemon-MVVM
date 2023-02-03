@@ -45,11 +45,13 @@ final class DetailPokemonViewController: UIViewController {
         $0.register(DetailPokemonEvolutionCell.self, forCellReuseIdentifier: "DetailPokemonEvolutionCell")
         $0.allowsMultipleSelectionDuringEditing = false
         $0.isScrollEnabled = false
+        $0.roundCorners([.bottomLeft, .bottomRight], radius: 15)
+               $0.backgroundColor = .white
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBlue
         bind()
         subViews()
         configureTableView()

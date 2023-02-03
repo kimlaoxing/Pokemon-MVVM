@@ -7,13 +7,14 @@ final class DetailPokemonBreedingView: UIView {
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
         $0.spacing = Padding.reguler
-        $0.horizontalPadding(to: self, Padding.double)
         $0.verticalPadding(to: self, Padding.reguler)
+        $0.horizontalPadding(to: self, Padding.double * 2)
     }
     
     private lazy var componentsStack = UIStackView.make {
         $0.axis = .horizontal
-        $0.distribution = .equalSpacing
+        $0.distribution = .equalCentering
+        $0.alignment = .fill
     }
     
     private lazy var leftSeparator = UIView.make {

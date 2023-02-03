@@ -91,6 +91,48 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		EAC50068298CBDCD00A562EF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087AF2987AA5200BB5245 /* DecodeWrapper.swift */,
+				EAD087C12987AA9700BB5245 /* UICollectionViewExtension.swift */,
+				EAD087C32987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift */,
+				EAD087C52987AAB100BB5245 /* UIImageView.swift */,
+				EAD087C72987AAB800BB5245 /* UIView.swift */,
+				EAD087C92987AABF00BB5245 /* UIViewController.swift */,
+				EA3D3416298A8DDC00CD3BEC /* UITableViewExtension.swift */,
+				EA97F7A6298BCFB6003A55F5 /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EAC50069298CBDD200A562EF /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087AB2987AA4300BB5245 /* BaseViewState.swift */,
+				EAD087AD2987AA4B00BB5245 /* APIService.swift */,
+				EAD087B72987AA6F00BB5245 /* Padding.swift */,
+				EAD087B92987AA7800BB5245 /* SafeAreaInsert.swift */,
+				EAD087BB2987AA7F00BB5245 /* ScreenSize.swift */,
+				EAD087B52987AA6800BB5245 /* Observable.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		EAC5006A298CBDD700A562EF /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				EAD087B12987AA5A00BB5245 /* DefaultCollectionView.swift */,
+				EAD087B32987AA6100BB5245 /* EmptyView.swift */,
+				EAD087BD2987AA8500BB5245 /* ScrollViewContainer.swift */,
+				EAD087BF2987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift */,
+				EAB0792829895C6400EEF27F /* RoundedButton.swift */,
+				EA48B536298A5B06008CB8C0 /* StatusBar.swift */,
+				EAD7E531298C0042006642E2 /* BreedingAndCaptureComponents.swift */,
+			);
+			path = ReuseView;
+			sourceTree = "<group>";
+		};
 		EAD087762987A79F00BB5245 = {
 			isa = PBXGroup;
 			children = (
@@ -112,28 +154,10 @@
 		EAD087822987A79F00BB5245 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EAC5006A298CBDD700A562EF /* ReuseView */,
+				EAC50069298CBDD200A562EF /* Constant */,
+				EAC50068298CBDCD00A562EF /* Extension */,
 				EAD087832987A79F00BB5245 /* Components.h */,
-				EAD087AB2987AA4300BB5245 /* BaseViewState.swift */,
-				EAD087AD2987AA4B00BB5245 /* APIService.swift */,
-				EAD087AF2987AA5200BB5245 /* DecodeWrapper.swift */,
-				EAD087B12987AA5A00BB5245 /* DefaultCollectionView.swift */,
-				EAD087B32987AA6100BB5245 /* EmptyView.swift */,
-				EAD087B52987AA6800BB5245 /* Observable.swift */,
-				EAD087B72987AA6F00BB5245 /* Padding.swift */,
-				EAD087B92987AA7800BB5245 /* SafeAreaInsert.swift */,
-				EAD087BB2987AA7F00BB5245 /* ScreenSize.swift */,
-				EAD087BD2987AA8500BB5245 /* ScrollViewContainer.swift */,
-				EAD087BF2987AA8E00BB5245 /* TwoLabelInHorizontalStack.swift */,
-				EAD087C12987AA9700BB5245 /* UICollectionViewExtension.swift */,
-				EAD087C32987AAA900BB5245 /* UICollectionViewDelegateFlowLayoutExtension.swift */,
-				EAD087C52987AAB100BB5245 /* UIImageView.swift */,
-				EAD087C72987AAB800BB5245 /* UIView.swift */,
-				EAD087C92987AABF00BB5245 /* UIViewController.swift */,
-				EAB0792829895C6400EEF27F /* RoundedButton.swift */,
-				EA48B536298A5B06008CB8C0 /* StatusBar.swift */,
-				EA3D3416298A8DDC00CD3BEC /* UITableViewExtension.swift */,
-				EA97F7A6298BCFB6003A55F5 /* StringExtension.swift */,
-				EAD7E531298C0042006642E2 /* BreedingAndCaptureComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

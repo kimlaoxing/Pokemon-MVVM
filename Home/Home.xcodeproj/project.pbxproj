@@ -175,13 +175,6 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		EAB079132989532500EEF27F /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		EAB079142989532900EEF27F /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,7 +282,6 @@
 			children = (
 				EAB079152989532D00EEF27F /* Presentation */,
 				EAB079142989532900EEF27F /* Data */,
-				EAB079132989532500EEF27F /* Utils */,
 				EAB079122989532200EEF27F /* DI */,
 				EAB079112989531E00EEF27F /* Domain */,
 			);

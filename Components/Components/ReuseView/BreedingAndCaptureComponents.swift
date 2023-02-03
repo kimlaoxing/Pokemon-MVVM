@@ -4,7 +4,7 @@ public final class BreedingAndCaptureComponents: UIView {
     
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
-        $0.edges(to: self, Padding.reguler)
+        $0.edges(to: self)
         $0.spacing = Padding.reguler
     }
     

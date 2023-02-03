@@ -8,25 +8,29 @@ final class DetailPokemonHeader: UIView {
     private lazy var container = UIStackView.make {
         $0.axis = .vertical
         $0.edges(to: self)
-        $0.spacing = Padding.reguler
     }
     
     private lazy var imagePokemon = UIImageView.make {
         $0.clipsToBounds = true
-        $0.height(100)
+        $0.height(200)
         $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .systemBlue
     }
     
     private lazy var roundedContainer = UIView.make {
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 15
+        $0.backgroundColor = .systemBlue
     }
     
     private lazy var roundedStack = UIStackView.make {
-        $0.edges(to: roundedContainer)
+        $0.backgroundColor = .white
+        $0.roundCorners([.topLeft, .topRight], radius: 15)
+        $0.top(to: roundedContainer, Padding.reguler)
+        $0.bottom(to: roundedContainer)
+        $0.horizontalPadding(to: roundedContainer)
         $0.axis = .vertical
         $0.spacing = Padding.half
     }
+    
     
     private lazy var namePokemon = UILabel.make {
         $0.textAlignment = .center

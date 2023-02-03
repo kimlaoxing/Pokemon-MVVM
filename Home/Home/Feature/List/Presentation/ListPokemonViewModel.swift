@@ -7,7 +7,6 @@ protocol ListPokemonViewModelOutput {
     func getListPokemon()
     func getDetail(with url: String)
     func viewDidLoad()
-    func loadNextPage(index: Int)
     func popUpError()
     func toDetail(with url: String)
 }
@@ -30,6 +29,7 @@ final class DefaultListPokemonViewModel: ListPokemonViewModel {
     let isLastPagePokemon: BehaviorRelay<Bool?> = BehaviorRelay.init(value: false)
     let state: BehaviorRelay<BaseViewState> = BehaviorRelay.init(value: .loading)
     var listDetail: [DetailPokemonResult] = []
+    private let currentLimit = 20
     
     private let useCase: ListPokemonUseCaseProtocol
     private let router: Routes
@@ -43,9 +43,7 @@ final class DefaultListPokemonViewModel: ListPokemonViewModel {
         self.router = router
     }
     
-    private var currentLimit = 20
-    private var totalPage = 1
-    private var isLoadNextPage = false
+    
     
     internal func viewDidLoad() {
         getListPokemon()
@@ -62,17 +60,6 @@ extension DefaultListPokemonViewModel {
         self.router.toDetail(with: url)
     }
     
-    func loadNextPage(index: Int) {
-        if currentLimit <= totalPage {
-            if !isLoadNextPage {
-                let lastIndex = (listPokemon.value.count) - 2
-                if lastIndex == index {
-                    getListPokemon()
-                }
-            }
-        }
-    }
-    
     func getListPokemon() {
         self.state.accept(.loading)
         self.useCase.getListPokemon(with: self.currentLimit) { data in
@@ -81,25 +68,6 @@ extension DefaultListPokemonViewModel {
                 self.error.accept("\(error)")
                 self.popUpError()
             case .success(let data):
-                //                self.totalPage = 1000
-                //                if self.currentLimit == 1 {
-                //                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
-                //                    self.currentLimit += 1
-                //                    self.listPokemon.accept(data)
-                //                    for url in data {
-                //                        self.getDetail(with: url.url)
-                //                    }
-                //                } else {
-                //                    self.isLastPagePokemon.accept(self.currentLimit == self.totalPage)
-                //                    self.currentLimit += 1
-                //                    var newData: [ListPokemonResult] = []
-                //                    newData.append(contentsOf: self.listPokemon.value)
-                //                    newData.append(contentsOf: data)
-                //                    self.listPokemon.accept(newData)
-                //                    for url in newData {
-                //                        self.getDetail(with: url.url)
-                //                    }
-                //                }
                 self.listPokemon.accept(data)
                 for url in data {
                     self.getDetail(with: url.url)

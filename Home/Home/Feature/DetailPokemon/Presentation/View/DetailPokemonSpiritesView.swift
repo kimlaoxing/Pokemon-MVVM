@@ -5,10 +5,14 @@ import UIKit
 final class DetailPokemonSpiritesView: UIView {
     
     private lazy var container = UIStackView.make {
-        $0.axis = .vertical
-        $0.edges(to: self, Padding.reguler)
-        $0.spacing = Padding.reguler   
-    }
+         $0.axis = .vertical
+         $0.top(to: self)
+         $0.horizontalPadding(to: self)
+         $0.bottom(to: self, Padding.double)
+         $0.spacing = Padding.reguler
+         $0.backgroundColor = .white
+         $0.roundCorners([.bottomLeft, .bottomRight], radius: 15)
+     }
     
     private lazy var title = UILabel.make {
         $0.textAlignment = .center
